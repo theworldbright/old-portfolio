@@ -44,7 +44,7 @@ function water_lily_setup() {
 
 	// Enable support for Post Thumbnails on posts and pages.
 	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'featured-image', 350, 9999, false );
+	add_image_size( 'featured-image', 600, 9999, false );
 
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'water_lily_custom_background_args', array(
