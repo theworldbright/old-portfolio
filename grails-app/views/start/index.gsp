@@ -5,18 +5,39 @@
     <title>Kent Shikama</title>
     <asset:stylesheet src="application.css"/>
     <asset:javascript src="application.js"/>
+    <g:javascript>
+        window.grailsSupport = {
+            assetsRoot : '${ raw(asset.assetPath(src: '')) }'
+        };
+    </g:javascript>
 </head>
 
 <body>
-<div id="container">
+<section class="gallery" id="container" itemscope itemtype="http://schema.org/ImageGallery">
     <div class="item" id="kentshikama"><h1>Kent Shikama</h1></div>
-    <div class="item" id="numbercortex"><h1>Number Cortex</h1><a href="http://www.numbercortex.com">Play the board game on the iOS and Android</a></p></div>
-    <div class="item" id="kentshikama"><p>This is some really long body of text. This is some really long body of text. This is some really long body of text. This is some really long body of text. This is some really long body of text. This is some really long body of text. This is some really long body of text. This is some really long body of text. This is some really long body of text. This is some really long body of text. This is some really long body of text. This is some really long body of text. This is some really long body of text. This is some really long body of text. This is some really long body of text.</p></div>
-    <div class="item" id="image1"><asset:image src="abstractshrimp.jpg" width="400" /></div>
-    <div class="item" id="image2"><asset:image src="butterfly.jpg"  width="400"/></div>
-    <div class="item" id="image3"><asset:image src="colorfulbird.jpg"  width="400"/></div>
-    <div class="item" id="image4"><asset:image src="dragonfly.jpg"  width="400"/></div>
-</div>
+    <div class="item" id="numbercortex"><h1>Number Cortex</h1><a href="http://www.numbercortex.com">Play the board game on the iOS and Android</a></div>
+    <figure class="item" id="image1" itemscope itemtype="http://schema.org/ImageObject">
+        <a href="${resource(dir:"images", file: "abstractshrimp.jpg") }" itemprop="contentUrl" data-size="1600x1200">
+            <asset:image itemprop="thumbnail" src="abstractshrimp.jpg" width="400"/>
+        </a>
+    </figure>
+    <figure class="item" id="image2" itemscope itemtype="http://schema.org/ImageObject">
+        <a href="${resource(dir:"images", file: "butterfly.jpg") }" itemprop="contentUrl" data-size="1600x813">
+            <asset:image itemprop="thumbnail" src="butterfly.jpg"  width="400"/>
+        </a>
+    </figure>
+    <figure class="item" id="image3" itemscope itemtype="http://schema.org/ImageObject">
+        <a href="${resource(dir:"images", file: "colorfulbird.jpg") }" itemprop="contentUrl" data-size="1600x1067">
+            <asset:image itemprop="thumbnail" src="colorfulbird.jpg"  width="400"/>
+        </a>
+    </figure>
+    <figure class="item" id="image4" itemscope itemtype="http://schema.org/ImageObject">
+        <a href="${resource(dir:"images", file: "dragonfly.jpg") }" itemprop="contentUrl" data-size="1600x900">
+            <asset:image itemprop="thumbnail" src="dragonfly.jpg"  width="400"/>
+        </a>
+    </figure>
+</section>
+<footer>Copyright © 2015 Kent Shikama. All rights reserved.</footer>
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
