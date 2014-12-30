@@ -6,6 +6,13 @@
 // to create separate JavaScript files as needed.
 //
 //= require jquery
+//= require doc-ready
+//= require eventie
+//= require imagesloaded.pkgd.min
+//= require masonry.pkgd.min
+//= require photoswipe.min
+//= require photoswipe-ui-default.min
+//= require kentshikama
 //= require_tree .
 //= require_self
 

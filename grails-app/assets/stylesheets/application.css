@@ -7,7 +7,17 @@
 * You're free to add application-wide styles to this file and they'll appear at the top of the
 * compiled file, but it's generally better to create a new file per style scope.
 *
-*= require main
-*= require mobile
+*= require photoswipe
+*= require default-skin/default-skin
 *= require_self
 */
+
+#container {
+    margin: 0 auto;
+    text-align: center;
+}
+.item {
+    width: 400px;
+    margin: 10px;
+    float: left;
+}
