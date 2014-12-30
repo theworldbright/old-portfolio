@@ -14,8 +14,6 @@
 */
 
 #titleBox {
-    border: solid #333;
-    border-width: 10px;
     color: #333;
     padding: 4px;
 }
@@ -30,6 +28,7 @@
 .titleSmallText {
     border: 6px solid #333;
     background-color: #333;
+    border-radius: 3px;
     color: #f3f3f3;
     margin: 8px;
 }
@@ -43,6 +42,7 @@
 .thumbnail {
     border: solid #FFFFFF;
     border-width: 14px;
+    border-radius: 4px;
 }
 
 #container {
