@@ -9,19 +9,76 @@
 *
 *= require photoswipe
 *= require default-skin/default-skin
+*= require reset
 *= require_self
 */
+
+#titleBox {
+    border: solid #333;
+    border-width: 10px;
+    color: #333;
+    padding: 4px;
+}
+
+#kentshikama {
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 400%;
+    font-weight: 100;
+    padding: 14px;
+}
+
+.titleSmallText {
+    border: 4px solid #333;
+    background-color: #333;
+    color: #f3f3f3;
+    margin: 8px;
+}
+
+.item {
+    width: 400px;
+    margin: 28px;
+    float: left;
+}
+
+.thumbnail {
+    border: solid #FFFFFF;
+    border-width: 14px;
+}
 
 #container {
     margin: 0 auto;
     text-align: center;
 }
-.item {
-    width: 400px;
-    margin: 10px;
-    float: left;
-}
 
 footer {
     text-align: center;
+}
+
+html {
+    background-color: #f3f3f3;
+}
+
+@media(max-width: 600px) {
+    .item {
+        margin-left: -14px;
+        margin-right: 0px;
+        margin-top: 14px;
+        margin-bottom: 14px;
+    }
+}
+
+@media(max-width: 440px) {
+    section {
+        max-width: 100%;
+    }
+    .item {
+        width: 95%;
+        float: left;
+    }
+    #titleBox {
+        max-width: 100%;
+    }
+    .thumbnail {
+        max-width: 100%;
+    }
 }
