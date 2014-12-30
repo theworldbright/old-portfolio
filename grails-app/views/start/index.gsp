@@ -14,7 +14,7 @@
 
 <body>
 <section class="gallery" id="container" itemscope itemtype="http://schema.org/ImageGallery">
-    <div class="item">
+    <div class="item" id="titleItem">
         <div id="titleBox">
             <h1 id="kentshikama">Kent Shikama</h1>
             <p class="titleSmallText">Photography/Illustrations</p>
