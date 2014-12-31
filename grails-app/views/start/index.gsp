@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Kent Shikama</title>
+    <meta name="viewport" content="width=device-width">
     <asset:stylesheet src="application.css"/>
     <asset:javascript src="application.js"/>
     <g:javascript>

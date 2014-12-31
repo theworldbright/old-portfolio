@@ -37,6 +37,10 @@
     padding: 4px;
 }
 
+#titleItem {
+    padding: 14px;
+}
+
 #kentshikama {
     font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 400%;
@@ -82,32 +86,34 @@ html {
 
 @media(max-width: 600px) {
     .item {
-        margin-left: -14px;
+        margin-left: 0px;
         margin-right: 0px;
         margin-top: 14px;
         margin-bottom: 14px;
     }
-    #titleItem {
-        margin-left: 0px;
-    }
 }
 
-@media(max-width: 440px) {
+@media(max-width: 400px) {
     section {
         max-width: 100%;
-        min-width: 95%;
+        min-width: 100%;
     }
     .item {
         width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+
         float: left;
     }
     #titleBox {
+        width: 100%;
         max-width: 100%;
-        min-width: 95%;
+        min-width: 100%;
     }
     .thumbnail {
+        width: 100%;
         max-width: 100%;
-        min-width: 95%;
+        min-width: 100%;
     }
 }
 
