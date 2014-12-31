@@ -195,7 +195,9 @@ $(document).ready(function () {
             openPhotoSwipe( hashData.pid - 1 ,  galleryElements[ hashData.gid - 1 ], true );
         }
     };
-
-    // execute above function
     initPhotoSwipeFromDOM('.gallery');
+});
+
+$(window).bind("load", function () {
+    $('#work-in-progress').fadeOut(100);
 });

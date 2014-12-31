@@ -13,6 +13,11 @@
 </head>
 
 <body>
+<div id="work-in-progress">
+    <div id="spinner">
+        <g:img uri="${resource(dir: "images", file: "ajax-loader.gif")}" alt="Loading..."/>
+    </div>
+</div>
 <section class="gallery" id="container" itemscope itemtype="http://schema.org/ImageGallery">
     <div class="item" id="titleItem">
         <div id="titleBox">
