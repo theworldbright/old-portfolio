@@ -59,14 +59,13 @@ $(document).ready(function () {
                         // <img> thumbnail element, retrieving thumbnail url
                         item.msrc = linkEl.children[0].getAttribute('src');
                     }
-
-                    item.el = figureEl; // save link to element for getThumbBoundsFn
                 } else {
                     var htmlCode = figureEl.children[0];
                     item = {
                         html: '<div class="htmlPhotoSwipe">' + htmlCode.innerHTML +  '</div>'
                     };
                 }
+                item.el = figureEl; // save link to element for getThumbBoundsFn
                 items.push(item);
             }
 
@@ -171,8 +170,13 @@ $(document).ready(function () {
                 // define gallery index (for URL)
                 galleryUID: galleryElement.getAttribute('data-pswp-uid'),
 
-                hideAnimationDuration:0,
-                showAnimationDuration:0
+                getThumbBoundsFn: function(index) {
+                        var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+                            pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+                            rect = thumbnail.getBoundingClientRect();
+
+                    return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
+                }
             };
 
             if(disableAnimation) {

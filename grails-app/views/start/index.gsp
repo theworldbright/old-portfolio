@@ -25,19 +25,25 @@
 
             <p class="titleSmallText">Photography/Illustrations</p>
 
-            <p class="titleSmallText">Game/Web Development</p>
+            <p class="titleSmallText">Web/Software Development</p>
         </div>
     </div>
     <figure class="item htmlFigure" id="numbercortex">
         <div style="display: none">
-            <div style="color: #FFF">
-                <h1>Number Cortex</h1>
-                <a href="http://www.numbercortex.com">Play the board game on the iOS and Android</a>
-                <img src="http://www.numbercortex.com/facebook_images/number_cortex_2.jpg" />
+            <div style="color: #FFF;" class="vertical-center">
+                <div>
+                    <a href="http://www.numbercortex.com">
+                        <img src="http://www.numbercortex.com/facebook_images/number_cortex_2.jpg"/>
+                    </a>
+                    <div style="margin: 40px;"></div>
+                    <p style="font-size: 150%;">Number Cortex is a three month project that I mostly completed over the summer of 2014.
+                    I designed and developed the board game app using Photoshop, Libgdx (Cross-platform Java Game Development Framework), Freetype, and Bfxr. For more information see <a href="http://www.numbercortex.com" style="color: #FFF;">the Number Cortex official website</a>.</p>
+                </div>
             </div>
         </div>
-        <a href="#" itemprop="contentUrl">
-            <img class="thumbnail" itemprop="thumbnail" src="http://www.numbercortex.com/facebook_images/number_cortex_1.jpg" width="600" />
+        <a href="http://numbercortex.com/images/number_cortex_mobile_banner_400.jpg" itemprop="contentUrl">
+            <img class="thumbnail" itemprop="thumbnail"
+                 src="http://numbercortex.com/images/number_cortex_mobile_banner_400.jpg" width="400"/>
         </a>
     </figure>
     <figure class="item imageFigure" id="image1" itemscope itemtype="http://schema.org/ImageObject">
