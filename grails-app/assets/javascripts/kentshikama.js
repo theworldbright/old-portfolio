@@ -36,30 +36,37 @@ $(document).ready(function () {
                     continue;
                 }
 
-                linkEl = figureEl.children[0]; // <a> element
+                if (figureEl.className.indexOf("imageFigure") > -1) {
+                    linkEl = figureEl.children[0]; // <a> element
 
-                size = linkEl.getAttribute('data-size').split('x');
+                    size = linkEl.getAttribute('data-size').split('x');
 
-                // create slide object
-                item = {
-                    src: linkEl.getAttribute('href'),
-                    w: parseInt(size[0], 10),
-                    h: parseInt(size[1], 10)
-                };
+                    // create slide object
+                    item = {
+                        src: linkEl.getAttribute('href'),
+                        w: parseInt(size[0], 10),
+                        h: parseInt(size[1], 10)
+                    };
 
 
 
-                if(figureEl.children.length > 1) {
-                    // <figcaption> content
-                    item.title = figureEl.children[1].innerHTML;
+                    if(figureEl.children.length > 1) {
+                        // <figcaption> content
+                        item.title = figureEl.children[1].innerHTML;
+                    }
+
+                    if(linkEl.children.length > 0) {
+                        // <img> thumbnail element, retrieving thumbnail url
+                        item.msrc = linkEl.children[0].getAttribute('src');
+                    }
+
+                    item.el = figureEl; // save link to element for getThumbBoundsFn
+                } else {
+                    var htmlCode = figureEl.children[0];
+                    item = {
+                        html: '<div class="htmlPhotoSwipe">' + htmlCode.innerHTML +  '</div>'
+                    };
                 }
-
-                if(linkEl.children.length > 0) {
-                    // <img> thumbnail element, retrieving thumbnail url
-                    item.msrc = linkEl.children[0].getAttribute('src');
-                }
-
-                item.el = figureEl; // save link to element for getThumbBoundsFn
                 items.push(item);
             }
 
@@ -158,36 +165,25 @@ $(document).ready(function () {
 
             items = parseThumbnailElements(galleryElement);
 
-            // define options (if needed)
             options = {
                 index: index,
 
                 // define gallery index (for URL)
                 galleryUID: galleryElement.getAttribute('data-pswp-uid'),
 
-                getThumbBoundsFn: function(index) {
-                    // See Options -> getThumbBoundsFn section of documentation for more info
-                    var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
-                        pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-                        rect = thumbnail.getBoundingClientRect();
-
-                    return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
-                }
-
+                hideAnimationDuration:0,
+                showAnimationDuration:0
             };
 
             if(disableAnimation) {
                 options.showAnimationDuration = 0;
             }
 
-            // Pass data to PhotoSwipe and initialize it
             gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
             gallery.init();
         };
 
-        // loop through all gallery elements and bind events
         var galleryElements = document.querySelectorAll( gallerySelector );
-
         for(var i = 0, l = galleryElements.length; i < l; i++) {
             galleryElements[i].setAttribute('data-pswp-uid', i+1);
             galleryElements[i].onclick = onThumbnailsClick;

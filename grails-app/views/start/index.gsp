@@ -7,7 +7,7 @@
     <asset:javascript src="application.js"/>
     <g:javascript>
         window.grailsSupport = {
-            assetsRoot : '${ raw(asset.assetPath(src: '')) }'
+            assetsRoot : '${raw(asset.assetPath(src: ''))}'
         };
     </g:javascript>
 </head>
@@ -17,29 +17,42 @@
     <div class="item" id="titleItem">
         <div id="titleBox">
             <h1 id="kentshikama">Kent Shikama</h1>
+
             <p class="titleSmallText">Photography/Illustrations</p>
+
             <p class="titleSmallText">Game/Web Development</p>
         </div>
     </div>
-    <div class="item slider" id="numbercortex"><h1>Number Cortex</h1><a href="http://www.numbercortex.com">Play the board game on the iOS and Android</a></div>
-    <figure class="item slider" id="image1" itemscope itemtype="http://schema.org/ImageObject">
-        <a href="${resource(dir:"images", file: "abstractshrimp.jpg") }" itemprop="contentUrl" data-size="1600x1200">
+    <figure class="item htmlFigure" id="numbercortex">
+        <div style="display: none">
+            <div style="color: #FFF">
+                <h1>Number Cortex</h1>
+                <a href="http://www.numbercortex.com">Play the board game on the iOS and Android</a>
+                <img src="http://www.numbercortex.com/facebook_images/number_cortex_2.jpg" />
+            </div>
+        </div>
+        <a href="#" itemprop="contentUrl">
+            <img class="thumbnail" itemprop="thumbnail" src="http://www.numbercortex.com/facebook_images/number_cortex_1.jpg" width="600" />
+        </a>
+    </figure>
+    <figure class="item imageFigure" id="image1" itemscope itemtype="http://schema.org/ImageObject">
+        <a href="${resource(dir: "images", file: "abstractshrimp.jpg")}" itemprop="contentUrl" data-size="1600x1200">
             <asset:image class="thumbnail" itemprop="thumbnail" src="abstractshrimp.jpg" width="400"/>
         </a>
     </figure>
-    <figure class="item slider" id="image2" itemscope itemtype="http://schema.org/ImageObject">
-        <a href="${resource(dir:"images", file: "butterfly.jpg") }" itemprop="contentUrl" data-size="1600x813">
-            <asset:image class="thumbnail" itemprop="thumbnail" src="butterfly.jpg"  width="400"/>
+    <figure class="item imageFigure" id="image2" itemscope itemtype="http://schema.org/ImageObject">
+        <a href="${resource(dir: "images", file: "butterfly.jpg")}" itemprop="contentUrl" data-size="1600x813">
+            <asset:image class="thumbnail" itemprop="thumbnail" src="butterfly.jpg" width="400"/>
         </a>
     </figure>
-    <figure class="item slider" id="image3" itemscope itemtype="http://schema.org/ImageObject">
-        <a href="${resource(dir:"images", file: "colorfulbird.jpg") }" itemprop="contentUrl" data-size="1600x1067">
-            <asset:image class="thumbnail" itemprop="thumbnail" src="colorfulbird.jpg"  width="400"/>
+    <figure class="item imageFigure" id="image3" itemscope itemtype="http://schema.org/ImageObject">
+        <a href="${resource(dir: "images", file: "colorfulbird.jpg")}" itemprop="contentUrl" data-size="1600x1067">
+            <asset:image class="thumbnail" itemprop="thumbnail" src="colorfulbird.jpg" width="400"/>
         </a>
     </figure>
-    <figure class="item slider" id="image4" itemscope itemtype="http://schema.org/ImageObject">
-        <a href="${resource(dir:"images", file: "dragonfly.jpg") }" itemprop="contentUrl" data-size="1600x900">
-            <asset:image class="thumbnail" itemprop="thumbnail" src="dragonfly.jpg"  width="400"/>
+    <figure class="item imageFigure" id="image4" itemscope itemtype="http://schema.org/ImageObject">
+        <a href="${resource(dir: "images", file: "dragonfly.jpg")}" itemprop="contentUrl" data-size="1600x900">
+            <asset:image class="thumbnail" itemprop="thumbnail" src="dragonfly.jpg" width="400"/>
         </a>
     </figure>
 </section>
