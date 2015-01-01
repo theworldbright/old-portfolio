@@ -34,6 +34,8 @@ $(document).ready(function () {
                     continue;
                 } else if (figureEl.tagName !== "FIGURE") {
                     continue;
+                } else if (figureEl.style.display === "none") {
+                    continue;
                 }
 
                 if (figureEl.className.indexOf("imageFigure") > -1) {
@@ -105,6 +107,8 @@ $(document).ready(function () {
                 if(childNodes[i].nodeType !== 1) {
                     continue;
                 } else if (childNodes[i].tagName !== "FIGURE") {
+                    continue;
+                } else if (childNodes[i].style.display === "none") {
                     continue;
                 }
 
