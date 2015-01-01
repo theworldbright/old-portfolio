@@ -3,7 +3,9 @@
 <html>
 <head>
     <title>Kent Shikama</title>
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <asset:stylesheet src="application.css"/>
     <asset:javascript src="application.js"/>
     <g:javascript>
@@ -23,10 +25,11 @@
     <div class="item" id="titleItem">
         <div id="titleBox">
             <h1 id="kentshikama">Kent Shikama</h1>
-
-            <p class="titleSmallText">Photography/Illustrations</p>
-
-            <p class="titleSmallText">Web/Software Development</p>
+            <nav class="titleNavigation">
+                <div id="allNavigation" onclick="allNavigation();" class="activeNavigation">All</div>
+                <div id="imageNavigation" onclick="imageNavigation();">Photography/Illustrations</div>
+                <div id="htmlNavigation" onclick="htmlNavigation();">Web/Software Development</div>
+            </nav>
         </div>
     </div>
     <figure class="item htmlFigure" id="numbercortex">
@@ -37,8 +40,11 @@
                         <img src="http://www.numbercortex.com/facebook_images/number_cortex_2.jpg"/>
                     </a>
                     <div style="margin: 40px;"></div>
+
                     <p style="font-size: 150%;">Number Cortex is a three month project that I mostly completed over the summer of 2014.
-                    I designed and developed the board game app using Photoshop, Libgdx (Cross-platform Java Game Development Framework), Freetype, and Bfxr. For more information see <a href="http://www.numbercortex.com" style="color: #FFF;">the Number Cortex official website</a>.</p>
+                    I designed and developed the board game app using Photoshop, Libgdx (Cross-platform Java Game Development Framework), Freetype, and Bfxr. For more information see <a
+                            href="http://www.numbercortex.com"
+                            style="color: #FFF;">the Number Cortex official website</a>.</p>
                 </div>
             </div>
         </div>
@@ -135,5 +141,45 @@
     </div>
 
 </div>
+<g:javascript>
+function allNavigation() {
+    var allItems = document.querySelectorAll('.item');
+    for (i = 0; i < allItems.length; i++) {
+        allItems[i].style.display = 'block';
+    }
+    $('#container').masonry();
+
+    $('.titleNavigation').children().removeClass('activeNavigation');
+    $('#allNavigation').addClass('activeNavigation');
+}
+function imageNavigation() {
+    var allItems = document.querySelectorAll('.item');
+    for (i = 0; i < allItems.length; i++) {
+        allItems[i].style.display = 'block';
+    }
+    var htmlItems = document.querySelectorAll('.htmlFigure');
+    for (i = 0; i < htmlItems.length; i++) {
+        htmlItems[i].style.display = 'none';
+    }
+    $('#container').masonry();
+
+    $('.titleNavigation').children().removeClass('activeNavigation');
+    $('#imageNavigation').addClass('activeNavigation');
+}
+function htmlNavigation() {
+    var allItems = document.querySelectorAll('.item');
+    for (i = 0; i < allItems.length; i++) {
+        allItems[i].style.display = 'block';
+    }
+    var imageItems = document.querySelectorAll('.imageFigure');
+    for (i = 0; i < imageItems.length; i++) {
+        imageItems[i].style.display = 'none';
+    }
+    $('#container').masonry();
+
+    $('.titleNavigation').children().removeClass('activeNavigation');
+    $('#htmlNavigation').addClass('activeNavigation');
+}
+</g:javascript>
 </body>
 </html>
