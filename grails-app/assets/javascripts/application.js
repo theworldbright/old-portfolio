@@ -12,6 +12,7 @@
 //= require masonry.pkgd.min
 //= require photoswipe.min
 //= require photoswipe-ui-default.min
+//= require kentshikama-photoswipe
 //= require kentshikama
 //= require_tree .
 //= require_self
