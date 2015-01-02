@@ -8,19 +8,18 @@ import java.nio.file.attribute.BasicFileAttributes
 
 class StartController {
     def index() {
-        def thumbnailFolder = grailsAttributes.getApplicationContext().getResource("/images/collection-400/").getFile().toString();
-        def imageFolder = grailsAttributes.getApplicationContext().getResource("/images/collection-1600/").getFile().toString();
-        ArrayList<String> thumbnailURLs = new ArrayList<String>();
-        ArrayList<String> imageURLs = new ArrayList<String>();
-        walk(thumbnailFolder, thumbnailURLs);
-        walk(imageFolder, imageURLs);
-        ArrayList<ImageFigure> imageFigureArrayList = buildImageFigureArrayList(thumbnailURLs, imageURLs);
-        Collections.sort(imageFigureArrayList, Collections.reverseOrder());
-    //    SimpleDateFormat creationFormattedDate = new SimpleDateFormat("dd-MM-yyyy HH-mm-ss").format(creationDate);
-    //    String creationDateString = creationFormattedDate.toString();
+        ArrayList<ImageFigure> imageFigureArrayList = buildImageFigureArrayList();
         return [imageFigureList: imageFigureArrayList];
     }
-    private ArrayList<ImageFigure> buildImageFigureArrayList(ArrayList<String> thumbnailURLs, ArrayList<String> imageURLs) {
+    private ArrayList<ImageFigure> buildImageFigureArrayList() {
+        String thumbnailsFolderString = "/images/collection-400/";
+        String imagesFolderString = "/images/collection-1600/";
+        String thumbnailFolder = grailsAttributes.getApplicationContext().getResource(thumbnailsFolderString).getFile().toString();
+        String imageFolder = grailsAttributes.getApplicationContext().getResource(imagesFolderString).getFile().toString();
+        ArrayList<String> thumbnailURLs = new ArrayList<String>();
+        ArrayList<String> imageURLs = new ArrayList<String>();
+        walkAndAdd(thumbnailFolder, thumbnailURLs);
+        walkAndAdd(imageFolder, imageURLs);
         ArrayList<ImageFigure> imageFigureArrayList = new ArrayList<ImageFigure>();
         if (thumbnailURLs.size() < imageURLs.size()) {
             println("Missing thumbnails...");
@@ -33,6 +32,7 @@ class StartController {
                 imageFigureArrayList.add(imageFigure);
             }
         }
+        Collections.sort(imageFigureArrayList, Collections.reverseOrder());
         return imageFigureArrayList;
     }
     private ImageFigure buildImageFigure(int position, ArrayList<String> imageURLs, ArrayList<String> thumbnailURLs) {
@@ -59,7 +59,7 @@ class StartController {
         return imageFigure;
     }
 
-    private void walk(String path , ArrayList<String> listOfURLs) {
+    private void walkAndAdd(String path , ArrayList<String> listOfURLs) {
         File root = new File( path );
         File[] list = root.listFiles();
         if (list == null) {
@@ -67,7 +67,7 @@ class StartController {
         }
         for ( File file : list ) {
             if ( file.isDirectory() ) {
-                walk( file.getAbsolutePath() , listOfURLs );
+                walkAndAdd( file.getAbsolutePath() , listOfURLs );
             } else if (file.isHidden()) {
                 // Skip file
             } else {
