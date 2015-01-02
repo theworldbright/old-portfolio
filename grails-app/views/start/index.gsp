@@ -39,7 +39,7 @@
         This website is a collection of Kent Shikama's works.
         Projects and photographs are mostly listed by creation date with the newest at the top.
         All images under the category 'Photography/Illustrations' are licensed by Kent Shikama under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-        If you have any questions please email <a href="mailto:contact@kentshikama.com">contact@kentshikama.com</a>.
+        The source code for the website itself is available on <a href="https://github.com/theworldbright/portfolio">Github</a> under a <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>. Feel free to modify and use it for your own website projects. If you have any questions please email <a href="mailto:contact@kentshikama.com">contact@kentshikama.com</a>.
         </p>
     </div>
     <figure class="item contentItem htmlFigure" id="numbercortex">
