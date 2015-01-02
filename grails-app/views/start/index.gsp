@@ -37,7 +37,7 @@
             <div style="color: #FFF;" class="vertical-center">
                 <div>
                     <a href="http://www.numbercortex.com">
-                        <img src="http://www.numbercortex.com/facebook_images/number_cortex_2.jpg"/>
+                        <img src="http://www.numbercortex.com/facebook_images/number_cortex_2.jpg" alt="Number Cortex Desktop Banner"/>
                     </a>
                     <div style="margin: 40px;"></div>
 
@@ -50,29 +50,16 @@
         </div>
         <a href="http://numbercortex.com/images/number_cortex_mobile_banner_400.jpg" itemprop="contentUrl">
             <img class="thumbnail" itemprop="thumbnail"
-                 src="http://numbercortex.com/images/number_cortex_mobile_banner_400.jpg" width="400"/>
+                 src="http://numbercortex.com/images/number_cortex_mobile_banner_400.jpg" alt="Number Cortex Mobile Banner" width="400"/>
         </a>
     </figure>
-    <figure class="item imageFigure" id="image1" itemscope itemtype="http://schema.org/ImageObject">
-        <a href="${resource(dir: "images", file: "abstractshrimp.jpg")}" itemprop="contentUrl" data-size="1600x1200">
-            <asset:image class="thumbnail" itemprop="thumbnail" src="abstractshrimp.jpg" width="400"/>
-        </a>
-    </figure>
-    <figure class="item imageFigure" id="image2" itemscope itemtype="http://schema.org/ImageObject">
-        <a href="${resource(dir: "images", file: "butterfly.jpg")}" itemprop="contentUrl" data-size="1600x813">
-            <asset:image class="thumbnail" itemprop="thumbnail" src="butterfly.jpg" width="400"/>
-        </a>
-    </figure>
-    <figure class="item imageFigure" id="image3" itemscope itemtype="http://schema.org/ImageObject">
-        <a href="${resource(dir: "images", file: "colorfulbird.jpg")}" itemprop="contentUrl" data-size="1600x1067">
-            <asset:image class="thumbnail" itemprop="thumbnail" src="colorfulbird.jpg" width="400"/>
-        </a>
-    </figure>
-    <figure class="item imageFigure" id="image4" itemscope itemtype="http://schema.org/ImageObject">
-        <a href="${resource(dir: "images", file: "dragonfly.jpg")}" itemprop="contentUrl" data-size="1600x900">
-            <asset:image class="thumbnail" itemprop="thumbnail" src="dragonfly.jpg" width="400"/>
-        </a>
-    </figure>
+    <g:each var="imageObject" in="${imageList}">
+        <figure class="item imageFigure" id="image1" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="${imageObject.URL}" itemprop="contentUrl" data-size="${imageObject.width}x${imageObject.height}">
+                <asset:image class="thumbnail" itemprop="thumbnail" src="${imageObject.thumbnailURL}" alt="${imageObject.alt} image" width="400"/>
+            </a>
+        </figure>
+    </g:each>
 </section>
 <footer>Copyright © 2015 Kent Shikama. All rights reserved.</footer>
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
