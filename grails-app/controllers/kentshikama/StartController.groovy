@@ -1,7 +1,10 @@
 package kentshikama
 
 import java.awt.image.BufferedImage;
-import javax.imageio.ImageIO;
+import javax.imageio.ImageIO
+import java.nio.file.Files
+import java.nio.file.Path
+import java.nio.file.attribute.BasicFileAttributes
 
 class StartController {
     def index() {
@@ -11,7 +14,10 @@ class StartController {
         ArrayList<String> imageURLs = new ArrayList<String>();
         walk(thumbnailFolder, thumbnailURLs);
         walk(imageFolder, imageURLs);
-        ArrayList<ImageFigure> imageFigureArrayList = buildImageFigureArrayList(thumbnailURLs, imageURLs)
+        ArrayList<ImageFigure> imageFigureArrayList = buildImageFigureArrayList(thumbnailURLs, imageURLs);
+        Collections.sort(imageFigureArrayList, Collections.reverseOrder());
+    //    SimpleDateFormat creationFormattedDate = new SimpleDateFormat("dd-MM-yyyy HH-mm-ss").format(creationDate);
+    //    String creationDateString = creationFormattedDate.toString();
         return [imageFigureList: imageFigureArrayList];
     }
     private ArrayList<ImageFigure> buildImageFigureArrayList(ArrayList<String> thumbnailURLs, ArrayList<String> imageURLs) {
@@ -23,7 +29,7 @@ class StartController {
         } else {
             int lengthOfList = thumbnailURLs.size();
             for (int i = 0; i < lengthOfList; i++) {
-                ImageFigure imageFigure = buildImageFigure(i, imageURLs, thumbnailURLs)
+                ImageFigure imageFigure = buildImageFigure(i, imageURLs, thumbnailURLs);
                 imageFigureArrayList.add(imageFigure);
             }
         }
@@ -33,6 +39,10 @@ class StartController {
         String imageURL = imageURLs.get(position);
 
         File imageFile = new File(imageURL);
+        Path imageFilePath = imageFile.toPath();
+        BasicFileAttributes attr = Files.readAttributes(imageFilePath, BasicFileAttributes.class);
+        Date creationDate = new Date(attr.creationTime().toMillis());
+
         BufferedImage image = ImageIO.read(imageFile);
         int width = image.getWidth();
         int height = image.getHeight();
@@ -45,7 +55,7 @@ class StartController {
         String imageFileName = imageFile.getName();
         String alt = imageFileName;
 
-        ImageFigure imageFigure = new ImageFigure(imageURL: relativeImageURL, width: width, height: height, thumbnailURL: relativeThumbnailURL, alt: alt);
+        ImageFigure imageFigure = new ImageFigure(imageURL: relativeImageURL, creationDate: creationDate, width: width, height: height, thumbnailURL: relativeThumbnailURL, alt: alt);
         return imageFigure;
     }
 
