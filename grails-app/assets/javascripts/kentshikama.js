@@ -12,7 +12,7 @@ docReady(function () {
 });
 
 function displayAllItems() {
-    var allItems = document.querySelectorAll('.item');
+    var allItems = document.querySelectorAll('.contentItem');
     for (i = 0; i < allItems.length; i++) {
         allItems[i].style.display = 'block';
     }
@@ -42,6 +42,16 @@ function htmlNavigation() {
     $('#container').masonry();
     $('.titleNavigation').children().removeClass('activeNavigation');
     $('#htmlNavigation').addClass('activeNavigation');
+}
+function toggleAbout() {
+    $('#aboutItem').fadeToggle(100, function() {
+        if ($('#aboutNavigation').text() === "Show About") {
+            $('#aboutNavigation').text("Hide About");
+        } else {
+            $('#aboutNavigation').text("Show About");
+        }
+        $('#container').masonry();
+    });
 }
 
 $(window).bind("load", function () {

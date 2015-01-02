@@ -37,13 +37,6 @@ $(document).ready(function () {
                         h: parseInt(size[1], 10)
                     };
 
-
-
-                    if(figureEl.children.length > 1) {
-                        // <figcaption> content
-                        item.title = figureEl.children[1].innerHTML;
-                    }
-
                     if(linkEl.children.length > 0) {
                         // <img> thumbnail element, retrieving thumbnail url
                         item.msrc = linkEl.children[0].getAttribute('src');
@@ -69,7 +62,6 @@ $(document).ready(function () {
         // triggers when user clicks on thumbnail
         var onThumbnailsClick = function(e) {
             e = e || window.event;
-            e.preventDefault ? e.preventDefault() : e.returnValue = false;
 
             var eTarget = e.target || e.srcElement;
 
@@ -81,6 +73,8 @@ $(document).ready(function () {
             if(!clickedListItem) {
                 return;
             }
+
+            e.preventDefault ? e.preventDefault() : e.returnValue = false;
 
             // find index of clicked item by looping through all child nodes
             // alternatively, you may define index via data- attribute

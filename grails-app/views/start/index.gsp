@@ -29,10 +29,20 @@
                 <div id="allNavigation" onclick="allNavigation();" class="activeNavigation">All</div>
                 <div id="imageNavigation" onclick="imageNavigation();">Photography/Illustrations</div>
                 <div id="htmlNavigation" onclick="htmlNavigation();">Web/Software Development</div>
+                <div id="aboutNavigation" onclick="toggleAbout();">Show About</div>
             </nav>
         </div>
     </div>
-    <figure class="item htmlFigure" id="numbercortex">
+    <div style="display: none;" class="item" id="aboutItem">
+        <h1 id="about">About</h1>
+        <p>
+        This website is a collection of Kent Shikama's works.
+        Projects and photographs are mostly listed by creation date with the newest at the top.
+        All images under the category 'Photography/Illustrations' are licensed by Kent Shikama under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+        If you have any questions please email <a href="mailto:contact@kentshikama.com">contact@kentshikama.com</a>.
+        </p>
+    </div>
+    <figure class="item contentItem htmlFigure" id="numbercortex">
         <div style="display: none">
             <div style="color: #FFF;" class="vertical-center">
                 <div>
@@ -42,7 +52,7 @@
                     </a>
                     <div style="margin: 40px;"></div>
 
-                    <p style="font-size: 150%;">Number Cortex is a three month project that I mostly completed over the summer of 2014.
+                    <p style="font-size: 150%;">Number Cortex is a three month project that I completed over the summer of 2014.
                     I designed and developed the board game app using Photoshop, Libgdx (Cross-platform Java Game Development Framework), Freetype, and Bfxr. For more information see <a
                             href="http://www.numbercortex.com"
                             style="color: #FFF;">the Number Cortex official website</a>.</p>
@@ -56,7 +66,7 @@
         </a>
     </figure>
     <g:each var="imageObject" in="${imageFigureList}">
-        <figure class="item imageFigure" itemscope itemtype="http://schema.org/ImageObject">
+        <figure class="item contentItem imageFigure" itemscope itemtype="http://schema.org/ImageObject">
             <a href="${resource(dir: '/', file: imageObject.imageURL)}" itemprop="contentUrl"
                data-size="${imageObject.width}x${imageObject.height}">
                 <img class="thumbnail" itemprop="thumbnail" src="${resource(dir: '/', file: imageObject.thumbnailURL)}"
