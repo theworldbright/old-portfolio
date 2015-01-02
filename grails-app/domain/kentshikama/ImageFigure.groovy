@@ -4,7 +4,7 @@ class ImageFigure {
     static constraints = {
     }
 
-    String URL;
+    String imageURL;
     int width;
     int height;
 

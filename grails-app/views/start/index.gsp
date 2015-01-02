@@ -53,10 +53,10 @@
                  src="http://numbercortex.com/images/number_cortex_mobile_banner_400.jpg" alt="Number Cortex Mobile Banner" width="400"/>
         </a>
     </figure>
-    <g:each var="imageObject" in="${imageList}">
-        <figure class="item imageFigure" id="image1" itemscope itemtype="http://schema.org/ImageObject">
-            <a href="${imageObject.URL}" itemprop="contentUrl" data-size="${imageObject.width}x${imageObject.height}">
-                <asset:image class="thumbnail" itemprop="thumbnail" src="${imageObject.thumbnailURL}" alt="${imageObject.alt} image" width="400"/>
+    <g:each var="imageObject" in="${imageFigureList}">
+        <figure class="item imageFigure" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="${resource(dir: '/', file: imageObject.imageURL)}" itemprop="contentUrl" data-size="${imageObject.width}x${imageObject.height}">
+                <img class="thumbnail" itemprop="thumbnail" src="${resource(dir: '/', file: imageObject.thumbnailURL)}" alt="${imageObject.alt} image" width="400"/>
             </a>
         </figure>
     </g:each>
