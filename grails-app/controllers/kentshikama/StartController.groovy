@@ -1,6 +1,5 @@
 package kentshikama
 
-import java.io.File;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 
@@ -12,6 +11,10 @@ class StartController {
         ArrayList<String> imageURLs = new ArrayList<String>();
         walk(thumbnailFolder, thumbnailURLs);
         walk(imageFolder, imageURLs);
+        ArrayList<ImageFigure> imageFigureArrayList = buildImageFigureArrayList(thumbnailURLs, imageURLs)
+        return [imageFigureList: imageFigureArrayList];
+    }
+    private ArrayList<ImageFigure> buildImageFigureArrayList(ArrayList<String> thumbnailURLs, ArrayList<String> imageURLs) {
         ArrayList<ImageFigure> imageFigureArrayList = new ArrayList<ImageFigure>();
         if (thumbnailURLs.size() < imageURLs.size()) {
             println("Missing thumbnails...");
@@ -24,9 +27,8 @@ class StartController {
                 imageFigureArrayList.add(imageFigure);
             }
         }
-        return [imageFigureList: imageFigureArrayList];
+        return imageFigureArrayList;
     }
-
     private ImageFigure buildImageFigure(int position, ArrayList<String> imageURLs, ArrayList<String> thumbnailURLs) {
         String imageURL = imageURLs.get(position);
 
@@ -36,12 +38,11 @@ class StartController {
         int height = image.getHeight();
 
         String baseURL = grailsAttributes.getApplicationContext().getResource("/").getFile().toString();
-        String relativeImageURL = "/" + new File(baseURL).toURI().relativize(new File(imageURL).toURI()).getPath();
+        String relativeImageURL = new File(baseURL).toURI().relativize(new File(imageURL).toURI()).getPath();
         String thumbnailURL = thumbnailURLs.get(position);
-        String relativeThumbnailURL = "/" + new File(baseURL).toURI().relativize(new File(thumbnailURL).toURI()).getPath();
+        String relativeThumbnailURL = new File(baseURL).toURI().relativize(new File(thumbnailURL).toURI()).getPath();
 
         String imageFileName = imageFile.getName();
-        println("Image File Name: " + imageFileName);
         String alt = imageFileName;
 
         ImageFigure imageFigure = new ImageFigure(imageURL: relativeImageURL, width: width, height: height, thumbnailURL: relativeThumbnailURL, alt: alt);
@@ -54,15 +55,13 @@ class StartController {
         if (list == null) {
             return;
         }
-        for ( File f : list ) {
-            if ( f.isDirectory() ) {
-                println("Walking directory: " + f.getAbsolutePath());
-                walk( f.getAbsolutePath() , listOfURLs );
-            } else if (f.isHidden()) {
-                println("Skipping hidden file: " + f.getAbsolutePath());
+        for ( File file : list ) {
+            if ( file.isDirectory() ) {
+                walk( file.getAbsolutePath() , listOfURLs );
+            } else if (file.isHidden()) {
+                // Skip file
             } else {
-                println( "Adding file URL:" + f.getAbsolutePath() );
-                listOfURLs.add(f.getAbsolutePath());
+                listOfURLs.add(file.getAbsolutePath());
             }
         }
     }
