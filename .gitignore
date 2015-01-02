@@ -1,6 +1,8 @@
 Kent Shikama.iml
 .idea
 
+/grails-app/conf/DataSource.groovy
+
 # web application files
 /web-app/WEB-INF/classes
 
