@@ -39,23 +39,21 @@
         This website is a collection of Kent Shikama's works.
         Projects and photographs are mostly listed by creation date with the newest at the top.
         All images under the category 'Photography/Illustrations' are licensed by Kent Shikama under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-        The source code for the website itself is available on <a href="https://github.com/theworldbright/portfolio">Github</a> under a <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>. Feel free to modify and use it for your own website projects. If you have any questions please email <a href="mailto:contact@kentshikama.com">contact@kentshikama.com</a>.
+        The source code for the website itself is available on <a href="https://github.com/theworldbright/portfolio">Github</a> under a <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a>. Feel free to modify and use any part of the code for your own website projects. If you have any questions please email <a href="mailto:contact@kentshikama.com">contact@kentshikama.com</a>.
         </p>
     </div>
     <figure class="item contentItem htmlFigure" id="numbercortex">
         <div style="display: none">
-            <div style="color: #FFF;" class="vertical-center">
-                <div>
+            <div class="htmlFigureSlide vertical-center">
+                <div class="horizontal-center">
                     <a href="http://www.numbercortex.com">
                         <img src="http://www.numbercortex.com/facebook_images/number_cortex_2.jpg"
                              alt="Number Cortex Desktop Banner"/>
                     </a>
                     <div style="margin: 40px;"></div>
-
-                    <p style="font-size: 150%;">Number Cortex is a three month project that I completed over the summer of 2014.
-                    I designed and developed the board game app using Photoshop, Libgdx (Cross-platform Java Game Development Framework), Freetype, and Bfxr. For more information see <a
-                            href="http://www.numbercortex.com"
-                            style="color: #FFF;">the Number Cortex official website</a>.</p>
+                    <p class="slideImageDescription">Number Cortex is a three month project that I completed over the summer of 2014.
+                    I designed and developed the board game app using Photoshop, Libgdx (Cross-platform Java Game Development Framework), Freetype, and Bfxr.
+                    For more information see <a href="http://www.numbercortex.com">the Number Cortex official website</a>.</p>
                 </div>
             </div>
         </div>
@@ -63,6 +61,25 @@
             <img class="thumbnail" itemprop="thumbnail"
                  src="http://numbercortex.com/images/number_cortex_mobile_banner_400.jpg"
                  alt="Number Cortex Mobile Banner" width="400"/>
+        </a>
+    </figure>
+    <figure class="item contentItem htmlFigure" id="freeplane">
+        <div style="display: none">
+            <div class="htmlFigureSlide vertical-center">
+                <div class="horizontal-center">
+                    <a href="http://sourceforge.net/projects/freeplane/">
+                        <asset:image src="Freeplane_splash.png" alt="Freeplane Banner by Robert Gibson" width="670" />
+                    </a>
+                    <p class="slideImageAttribution">The Freeplane Logo is licensed by Robert Gibson <br /> under the <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC Attribution-ShareAlike 3.0 International License</a>.</p>
+                    <div style="margin: 40px;"></div>
+                    <p class="slideImageDescription"><a href="http://sourceforge.net/projects/freeplane/">Freeplane</a> is an open source mind-mapping application that I have been helping develop since January 2014. I have done a redesign of the preferences panel and have added the ability to add background images to the map. I am currently working on porting the entire UI to JavaFX and improving the SimplyHTML plugin.</p>
+                </div>
+            </div>
+        </div>
+        <a href="${resource(dir: '/images/', file: 'Freeplane_splash.png.jpg')}" itemprop="contentUrl">
+            <asset:image class="thumbnail" itemprop="thumbnail"
+                 src="Freeplane_splash.png"
+                 alt="Freeplane Banner by Robert Gibson" width="400"/>
         </a>
     </figure>
     <g:each var="imageObject" in="${imageFigureList}">
