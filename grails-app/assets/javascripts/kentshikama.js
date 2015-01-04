@@ -44,7 +44,7 @@ function htmlNavigation() {
     $('#htmlNavigation').addClass('activeNavigation');
 }
 function toggleAbout() {
-    $('#aboutItem').fadeToggle(100, function() {
+    $('#aboutItem').fadeToggle(100, function () {
         if ($('#aboutNavigation').text() === "Show About") {
             $('#aboutNavigation').text("Hide About");
         } else {
@@ -53,7 +53,6 @@ function toggleAbout() {
         $('#container').masonry();
     });
 }
-
 $(window).bind("load", function () {
     $('#work-in-progress').fadeOut(100);
 });

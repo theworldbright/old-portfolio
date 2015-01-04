@@ -8,11 +8,6 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <asset:stylesheet src="application.css"/>
     <asset:javascript src="application.js"/>
-    <g:javascript>
-        window.grailsSupport = {
-            assetsRoot : '${raw(asset.assetPath(src: ''))}'
-        };
-    </g:javascript>
 </head>
 
 <body>

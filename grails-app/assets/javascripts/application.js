@@ -6,8 +6,8 @@
 // to create separate JavaScript files as needed.
 //
 //= require jquery
-//= require doc-ready
 //= require eventie
+//= require doc-ready
 //= require imagesloaded.pkgd.min
 //= require masonry.pkgd.min
 //= require photoswipe.min
