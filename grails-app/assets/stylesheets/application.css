@@ -30,6 +30,11 @@
     color: #FFF;
 }
 
+.htmlFigureSlide img {
+    max-width: 60%;
+    max-height: 60%;
+}
+
 .horizontal-center {
     width: 100%;
 }

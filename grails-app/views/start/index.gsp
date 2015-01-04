@@ -47,8 +47,7 @@
             <div class="htmlFigureSlide vertical-center">
                 <div class="horizontal-center">
                     <a href="http://www.numbercortex.com">
-                        <img src="http://www.numbercortex.com/facebook_images/number_cortex_2.jpg"
-                             alt="Number Cortex Desktop Banner"/>
+                        <img src="http://www.numbercortex.com/facebook_images/number_cortex_2.jpg" alt="Number Cortex Desktop Banner"/>
                     </a>
                     <div style="margin: 40px;"></div>
                     <p class="slideImageDescription">Number Cortex is a three month project that I completed over the summer of 2014.
@@ -68,7 +67,7 @@
             <div class="htmlFigureSlide vertical-center">
                 <div class="horizontal-center">
                     <a href="http://sourceforge.net/projects/freeplane/">
-                        <asset:image src="Freeplane_splash.png" alt="Freeplane Banner by Robert Gibson" width="670" />
+                        <asset:image src="freeplane_splash.jpg" alt="Freeplane Banner by Robert Gibson" width="670" />
                     </a>
                     <p class="slideImageAttribution">The Freeplane Logo is licensed by Robert Gibson <br /> under the <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC Attribution-ShareAlike 3.0 International License</a>.</p>
                     <div style="margin: 40px;"></div>
@@ -76,10 +75,46 @@
                 </div>
             </div>
         </div>
-        <a href="${resource(dir: '/images/', file: 'Freeplane_splash.png.jpg')}" itemprop="contentUrl">
-            <asset:image class="thumbnail" itemprop="thumbnail"
-                 src="Freeplane_splash.png"
-                 alt="Freeplane Banner by Robert Gibson" width="400"/>
+        <a href="${resource(dir: '/images/', file: 'freeplane_splash.jpg')}" itemprop="contentUrl">
+            <asset:image class="thumbnail" itemprop="thumbnail" src="freeplane_splash.jpg" alt="Freeplane Banner by Robert Gibson" width="400"/>
+        </a>
+    </figure>
+    <figure class="item contentItem htmlFigure" id="dfg">
+        <div style="display: none">
+            <div class="htmlFigureSlide vertical-center">
+                <div class="horizontal-center">
+                    <a href="https://github.com/theworldbright/Daifugo">
+                        <asset:image src="daifugo_logo.jpg" alt="KGTime Daifugo Logo" width="400" />
+                    </a>
+                    <div style="margin: 40px;"></div>
+                    <p class="slideImageDescription">
+                        Daifugo is an online multi-player card game that I built mainly using the <a href="http://math.hws.edu/javanotes/source/chapter12/netgame/common/">Netgame library (Lightweight Java Networking Socket Library)</a>.
+                        I started in the summer of 2012 with a two player version of the game and completed a multi-player version of it over the winter of 2014. For more information please see the <a href="https://github.com/theworldbright/Daifugo">github repo</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <a href="${resource(dir: '/images/', file: 'daifugo_logo.jpg')}" itemprop="contentUrl">
+            <asset:image class="thumbnail" itemprop="thumbnail" src="daifugo_logo.jpg" alt="KGTime Daifugo Logo" width="400"/>
+        </a>
+    </figure>
+    <figure class="item contentItem htmlFigure" id="ibwebsite">
+        <div style="display: none">
+            <div class="htmlFigureSlide vertical-center">
+                <div class="horizontal-center">
+                    <a href="http://ib.smis.ac.jp">
+                        <asset:image src="ib_website_home.jpg" alt="IB Website Home Page Screenshot" width="1176" />
+                    </a>
+                    <div style="margin: 40px;"></div>
+                    <p class="slideImageDescription">
+                        <a href="http://ib.smis.ac.jp">The SMIS IB Website</a> is a project that aims to provide up-to-date information about the IB at <a href="http://www.smis.ac.jp/">St. Mary’s International School</a> to students, teachers and parents.
+                        For more information about the development process please see the <a href="http://ib.smis.ac.jp/ps/creativity/ibtechgroup/xml/ibtechgroup.xml">IB Tech Group page</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <a href="${resource(dir: '/images/', file: 'ib_website_home.jpg')}" itemprop="contentUrl">
+            <asset:image class="thumbnail" itemprop="thumbnail" src="ib_website_home.jpg" alt="IB Website Home Page Screenshot" width="400"/>
         </a>
     </figure>
     <g:each var="imageObject" in="${imageFigureList}">
