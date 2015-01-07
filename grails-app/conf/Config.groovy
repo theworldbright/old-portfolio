@@ -91,7 +91,7 @@ environments {
     }
     production {
         grails.logging.jul.usebridge = false
-        grails.serverURL = "http://www.kentshikama.com"
+        // grails.serverURL = "http://www.kentshikama.com"
     }
 }
 
