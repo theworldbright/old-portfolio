@@ -1,7 +1,7 @@
 Overview
 ========
 
-Website for personal portfolio. Design inspired by the [Fukasawa Wordpress theme](https://wordpress.org/themes/fukasawa).
+My personal portfolio. Design inspired by the [Fukasawa Wordpress theme](https://wordpress.org/themes/fukasawa).
 
 Frameworks/Plugins/Libraries Used
 =================================
@@ -12,8 +12,8 @@ Frameworks
 
 Javascript Plugins/Libraries
 
--[Masonry](http://masonry.desandro.com)
--[PhotoSwipe](http://photoswipe.com)
+- [Masonry](http://masonry.desandro.com)
+- [PhotoSwipe](http://photoswipe.com)
 
 License
 =======
