@@ -1,5 +1,5 @@
 task buildImageJson(type: Exec) {
-    commandLine 'groovy', 'run'
+    commandLine 'groovy', 'buildImageFigureProperties'
 }
 
 task cleanProject(dependsOn: buildImageJson, type: Exec) {
