@@ -5,6 +5,7 @@ Kent Shikama.iml
 
 # web application files
 /web-app/WEB-INF/classes
+/web-app/json/
 
 # default HSQL database files for production mode
 /prodDb.*
@@ -31,4 +32,7 @@ Kent Shikama.iml
 
 # "temporary" build files
 /target
+
 Kent Shikama-grailsPlugins.iml
+scripts/.gradle/
+

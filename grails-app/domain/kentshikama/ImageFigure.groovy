@@ -1,8 +1,5 @@
 package kentshikama
 
-import java.awt.Image
-import java.text.SimpleDateFormat;
-
 class ImageFigure implements Comparable<ImageFigure> {
     static constraints = {
     }

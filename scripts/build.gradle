@@ -1,0 +1,24 @@
+task buildImageJson(type: Exec) {
+    commandLine 'groovy', 'run'
+}
+
+task cleanProject(dependsOn: buildImageJson, type: Exec) {
+    workingDir '../'
+    commandLine 'grails', 'clean'
+}
+
+task createWar(dependsOn: cleanProject, type: Exec) {
+    workingDir '../'
+    commandLine 'grails', 'war'
+}
+
+task renameWarToROOT(dependsOn: createWar, type: Exec) {
+    workingDir '../target'
+    commandLine 'rm','-rf','ROOT.war'
+    commandLine 'mv','Kent Shikama-0.1.war','ROOT.war'
+}
+
+task deployKentShikama(dependsOn: renameWarToROOT) << {
+    println "Deploying Kent Shikama..."
+}
+
