@@ -1,5 +1,6 @@
 Kent Shikama.iml
 .idea
+.sass-cache/
 
 /grails-app/conf/DataSource.groovy
 
