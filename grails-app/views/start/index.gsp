@@ -19,7 +19,7 @@
 <section class="gallery" id="container" itemscope itemtype="http://schema.org/ImageGallery">
     <div class="item" id="titleItem">
         <div id="titleBox">
-            <h1 id="kentshikama">Kent Shikama</h1>
+            <h1 id="kentShikama">Kent Shikama</h1>
             <nav class="titleNavigation">
                 <div id="allNavigation" onclick="allNavigation();" class="activeNavigation">All</div>
                 <div id="imageNavigation" onclick="imageNavigation();">Photography/Illustrations</div>
