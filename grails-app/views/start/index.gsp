@@ -93,6 +93,24 @@
             <asset:image class="thumbnail" itemprop="thumbnail" src="daifugo_logo.jpg" alt="KGTime Daifugo Logo" width="400"/>
         </a>
     </figure>
+    <figure class="item contentItem htmlFigure" id="worstparadigm">
+        <div style="display: none">
+            <div class="htmlFigureSlide vertical-center">
+                <div class="horizontal-center">
+                    <a href="http://www.worstparadigm.com">
+                        <asset:image src="worstparadigm_screenshot.jpg" alt="Worst Paradigm Screenshot" width="986" />
+                    </a>
+                    <div style="margin: 40px;"></div>
+                    <p class="slideImageDescription">
+                        Worst Paradigm is a website that I created to collect data for a cognitive science group project. The website was created in December of 2014 mainly using Grails and Bootstrap. If you are interested, please <a href="http://www.worstparadigm.com">visit the website and try the experiment</a>; it should take a maximum of 10 minutes.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <a href="${resource(dir: '/images/', file: 'worstparadigm_screenshot.jpg')}" itemprop="contentUrl">
+            <asset:image class="thumbnail" itemprop="thumbnail" src="worstparadigm_screenshot.jpg" alt="Worst Paradigm Screenshot" width="400"/>
+        </a>
+    </figure>
     <figure class="item contentItem htmlFigure" id="ibwebsite">
         <div style="display: none">
             <div class="htmlFigureSlide vertical-center">
