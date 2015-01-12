@@ -37,3 +37,4 @@ Kent Shikama.iml
 Kent Shikama-grailsPlugins.iml
 scripts/.gradle/
 
+*.jar
